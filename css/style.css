@@ -71,6 +71,7 @@ video {
 }
 
 .logo img {
+    width: 50%;
     max-width: 90%;
 }
 
