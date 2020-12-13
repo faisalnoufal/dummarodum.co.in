@@ -82,10 +82,11 @@ video {
     margin-top: 25px;
     text-decoration: none;
     font-size: 1.5rem;
-    background: -webkit-linear-gradient(#ffffff, rgb(247, 225, 28));
+    background: -webkit-linear-gradient(#ffffff, rgb(255, 255, 255));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Lato", sans-serif;
+    font-weight: bold;
 }
 
 ul li {
@@ -98,7 +99,7 @@ ul li a {
     position: relative;
     text-align: center;
     color: rgb(145, 140, 140);
-    border-radius: 50%;
+    /* border-radius: 50%; */
     width: 50px;
     height: 50px;
     line-height: 51px;
@@ -113,7 +114,7 @@ ul li a:before {
     left: 0;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
+    /* border-radius: 50%; */
     background: yellow;
     transition: 0.5s;
     transform: scale(0.9);
@@ -122,7 +123,7 @@ ul li a:before {
 
 ul li a:hover:before {
     transform: scale(1.1);
-    box-shadow: 0 0 15px gold;
+    box-shadow: 0 0 15px yellow;
 }
 
 ul li a:hover {
@@ -130,11 +131,11 @@ ul li a:hover {
     box-shadow: 0 0 5px yellow;
 }
 
-.exotic {
+/* .exotic {
     background: -webkit-linear-gradient(#ffd700, rgb(124, 112, 6));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
+} */
 
 a {
     text-decoration-line: none;
