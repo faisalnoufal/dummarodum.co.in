@@ -25,16 +25,30 @@
   <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
   <meta name="theme-color" content="#ffffff">
   <title>Dum Maro Dum | Kochi</title>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
+<script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHu7ryCt_r8PRcbxAU4w-gXqHUUw53Kx0&callback=initMap&libraries=&v=weekly"
+    defer></script>
   <link rel="stylesheet" href="/assets/css/bootstrap.css">
   <link href="/assets/css/style.css" rel="stylesheet" />
+  <style>
+#map {
+  /*border:solid yellow;*/
+        height: 450px;
+        /* The height is 400 pixels */
+        width: 100%;
+        /* The width is the width of the web page */
+      }
+
+  </style>
 
 </head>
 
 <body class="bg-dark">
 
   <header>
-    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="" width="100px" /></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
@@ -44,13 +58,13 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item active">
-              <a class="nav-link" aria-current="page" href="/"><i class="bi bi-grid-3x3-gap-fill"></i>
-                Home</a>
+              <a class="nav-link" href="/index.html">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/menu.html">Menu</a>
+              <a class="nav-link" aria-current="page" href="/menu.html"><i class="bi bi-grid-3x3-gap-fill"></i>
+                Menu</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="/chef.html">Chef</a>
             </li>
             <li class="nav-item">
@@ -92,23 +106,25 @@
 
   <!-- START THE FEATURETTES -->
 
-  <div class="container d-flex banner">
+  <div class="container">
     <div class="row">
       <div class="md-col-7">
         <h1 class="mb-5 mt-5">
-          A <span class="biriyani"> Biriyani </span>
-          <span class="text-muted">Story</span>
+          Our <span class="biriyani"> Location </span>
+          <!-- <span class="text-muted">Story</span> -->
         </h1>
-        <p class="lead mb-5">
-          A feast of aromatic and flavourful Biryani is a dream come true for food lovers.Our simple style of biryani is
-          sure to delight everyone's heart and appetite. The amalgamation of spices ground to perfection , tender
-          succulent meat, farm fresh vegetables and aged Kaima rice, cooked in traditional DUM style, ensures consistent
-          quality and taste in every bite. Choose from our choice of chicken or beef biryani, which is sure to leave our
-          customers craving for more.</p>
-        <p class="lead mb-5">Our mission is to serve Biryani to everyone no matter the size. The delicacy of our biryani
-          is now available for kids too.
-        </p>
-        <div class="">
+
+        <!-- <div>
+          <iframe src="https://www.google.com/search?client=firefox-b-d&q=10.023323%2C+76.348289"
+            frameborder="0"></iframe>
+          <iframe src="https://www.webadder.com" frameborder="0"></iframe>
+        </div> -->
+
+
+
+        <div id="map"></div>
+
+        <div class="mt-5">
           <a class="ordernow" href="https://api.whatsapp.com/send?phone=918136955222&text=Hello.." target="_blank">
             <ion-icon name="cart-outline"></ion-icon>Order Now
           </a>
@@ -117,13 +133,13 @@
 
       </div>
     </div>
-    <div class="md-col-5 sm-col-12">
-      <img src="/assets/images/plate.png" alt="">
-    </div>
+    <!-- <div class="md-col-5 sm-col-12">
+      <img src="https://images.pexels.com/photos/952366/pexels-photo-952366.jpeg" alt="" height="200px">
+    </div> -->
     <div>
     </div>
   </div>
-  </div>
+
 
   <!-- FOOTER -->
   <footer class="container mt-5">
@@ -138,6 +154,27 @@
   </main>
   <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
   <script src="/assets/js/bootstrap.js"></script>
+
+   <script>
+      
+function initMap() {
+  // The location of Uluru
+  const dummarodum = { lat: 10.023323, lng: 76.348289 };
+  // The map, centered at Uluru
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 18,
+    center: dummarodum,
+  });
+  // The marker, positioned at Uluru
+  const marker = new google.maps.Marker({
+    position: dummarodum,
+    map: map,
+    //icon: "/assets/images/dmd.gif"
+  });
+}
+
+    </script>
+  
 
 </body>
 
